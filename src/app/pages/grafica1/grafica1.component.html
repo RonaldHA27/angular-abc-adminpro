@@ -1,1 +1,24 @@
-<p>grafica1 works!</p>
+<div class="row">
+    <div class="col-6">
+        <app-donuts title="Ventas"></app-donuts>
+    </div>
+
+    <div class="col-6">
+        <app-donuts [labels]="labels1"
+                    [data]="data1"
+                    title="compras"
+        ></app-donuts>
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-donuts title="Cambios"></app-donuts>
+    </div>
+
+    <div class="col-6">
+        <app-donuts title="Compras2"></app-donuts>
+    </div>
+    
+</div>
