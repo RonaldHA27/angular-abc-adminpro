@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('googleBtn') googleBtn!: ElementRef;
 
   public formSubmitted = false;
+  
 
   public loginForm = this.fb.group({
     email:[ localStorage.getItem('email')|| '', [Validators.required, Validators.email]],
@@ -32,6 +33,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
                   
   }
+  
+  
   ngAfterViewInit(): void {
     this.googleInit();  
   }
@@ -80,7 +83,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
       }, (err)=>{
         //Si sucede un error
-        Swal.fire('GAAAA', err.error.msg,'error');
+        Swal.fire('ESTUDIA SONSO', err.error.msg,'error');
         console.log(err);
       })
 
