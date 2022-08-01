@@ -16,7 +16,7 @@ export class IncrementadorComponent implements OnInit {
   @Input('valor') progreso : number= 10;
   @Input('btn') btnClass : string = 'btn-primary';
 
-  @Output('valor') valorSalida: EventEmitter<number>= new EventEmitter();
+  @Output('valor') valorSalida: EventEmitter<number> = new EventEmitter();
   
   
   cambiarValor(valor: number) {

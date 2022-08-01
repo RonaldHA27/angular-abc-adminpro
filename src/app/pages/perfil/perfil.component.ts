@@ -76,6 +76,7 @@ export class PerfilComponent implements OnInit {
   
   
   subirImagen(){
+    
     this.fileUploadService
     .actualizarFoto(this.imagenSubir, 'usuarios',this.usuario.uid)
     .then(img => {
