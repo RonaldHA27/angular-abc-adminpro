@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CargarUsuario } from '../interfaces/cargar-usuario.interface';
+import { Hospital } from '../models/hospital.model';
+import { Medico } from '../models/medico.model';
+
 import { Usuario } from '../models/usuario.model';
 
 
@@ -35,8 +37,16 @@ export class BusquedasService {
     );
   }
 
+  private transformarHospitales(resultados:any[]):Hospital[]{
+    return resultados;
+  }
+
+  private transformarMedicos(resultados:any[]):Medico[]{
+    return resultados;
+  }
+
   buscar(
-    tipo:'usuarios'|'medicos'|'hospitales',
+    tipo:"usuarios"|"hospitales"|"medicos",
     termino:string
     ){
 
@@ -49,12 +59,24 @@ export class BusquedasService {
                       return this.transformarUsuarios(resp.resultados)
                     
 
+                  break
+
+                  case 'hospitales':
+                        return this.transformarHospitales(resp.resultados)
+                                    
+                  break;
+
+                  case 'medicos':
+                        return this.transformarMedicos(resp.resultados)
+
+                  break;      
                   default:
-                      return[];
+                        return[];
                 }
               })
             );
 
   }
+  
   
 }

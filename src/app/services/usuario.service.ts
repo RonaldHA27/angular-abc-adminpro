@@ -15,7 +15,6 @@ import { LoginForm } from '../interfaces/login-form.interface';
 import { Usuario } from '../models/usuario.model';
 import { CargarUsuario } from '../interfaces/cargar-usuario.interface';
 
-import { EmailValidator } from '@angular/forms';
 
 declare const google:any;
 
